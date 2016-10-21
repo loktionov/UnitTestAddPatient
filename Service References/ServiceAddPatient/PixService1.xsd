@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebService.Core" />
+  <xs:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" />
+  <xs:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/N3.EMK.Domain.Enums" />
+  <xs:element name="GetVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebService.Core" minOccurs="0" name="GetVersionResult" nillable="true" type="q1:VersionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idLPU" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" minOccurs="0" name="patient" nillable="true" type="q2:PatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddPatientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idLPU" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" minOccurs="0" name="patient" nillable="true" type="q3:PatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="idLPU" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" minOccurs="0" name="patient" nillable="true" type="q4:PatientDto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/N3.EMK.Domain.Enums" minOccurs="0" name="idSource" type="q5:SourceType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" minOccurs="0" name="GetPatientResult" nillable="true" type="q6:ArrayOfPatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientByGlobalId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patientId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPatientByGlobalIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" minOccurs="0" name="GetPatientByGlobalIdResult" nillable="true" type="q7:PatientDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

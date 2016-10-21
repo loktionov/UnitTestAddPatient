@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PixService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebService.Core" />
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/N3.EMK.Dto.Common" />
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" />
+      <xsd:import schemaLocation="http://demo-iemk20.zdrav.netrika.ru/PixService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/N3.EMK.Domain.Enums" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPixService_GetVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersion" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_AddPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatient" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_AddPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_AddPatient_RequestFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/N3.EMK.Dto.Common" name="detail" element="q1:RequestFault" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_UpdatePatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatient" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_UpdatePatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_UpdatePatient_RequestFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/N3.EMK.Dto.Common" name="detail" element="q2:RequestFault" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatient" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatient_RequestFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/N3.EMK.Dto.Common" name="detail" element="q3:RequestFault" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatientByGlobalId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByGlobalId" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatientByGlobalId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientByGlobalIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixService_GetPatientByGlobalId_RequestFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/N3.EMK.Dto.Common" name="detail" element="q4:RequestFault" />
+  </wsdl:message>
+  <wsdl:portType name="IPixService">
+    <wsdl:operation name="GetVersion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceSupport/GetVersion" message="tns:IPixService_GetVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceSupport/GetVersionResponse" message="tns:IPixService_GetVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixService/AddPatient" message="tns:IPixService_AddPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixService/AddPatientResponse" message="tns:IPixService_AddPatient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPixService/AddPatientRequestFaultFault" name="RequestFaultFault" message="tns:IPixService_AddPatient_RequestFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixService/UpdatePatient" message="tns:IPixService_UpdatePatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixService/UpdatePatientResponse" message="tns:IPixService_UpdatePatient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPixService/UpdatePatientRequestFaultFault" name="RequestFaultFault" message="tns:IPixService_UpdatePatient_RequestFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixService/GetPatient" message="tns:IPixService_GetPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixService/GetPatientResponse" message="tns:IPixService_GetPatient_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPixService/GetPatientRequestFaultFault" name="RequestFaultFault" message="tns:IPixService_GetPatient_RequestFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByGlobalId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixService/GetPatientByGlobalId" message="tns:IPixService_GetPatientByGlobalId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixService/GetPatientByGlobalIdResponse" message="tns:IPixService_GetPatientByGlobalId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IPixService/GetPatientByGlobalIdRequestFaultFault" name="RequestFaultFault" message="tns:IPixService_GetPatientByGlobalId_RequestFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPixService" type="tns:IPixService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVersion">
+      <soap:operation soapAction="http://tempuri.org/IServiceSupport/GetVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPatient">
+      <soap:operation soapAction="http://tempuri.org/IPixService/AddPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RequestFaultFault">
+        <soap:fault use="literal" name="RequestFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePatient">
+      <soap:operation soapAction="http://tempuri.org/IPixService/UpdatePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RequestFaultFault">
+        <soap:fault use="literal" name="RequestFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatient">
+      <soap:operation soapAction="http://tempuri.org/IPixService/GetPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RequestFaultFault">
+        <soap:fault use="literal" name="RequestFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientByGlobalId">
+      <soap:operation soapAction="http://tempuri.org/IPixService/GetPatientByGlobalId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="RequestFaultFault">
+        <soap:fault use="literal" name="RequestFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PixService">
+    <wsdl:port name="BasicHttpBinding_IPixService" binding="tns:BasicHttpBinding_IPixService">
+      <soap:address location="http://demo-iemk20.zdrav.netrika.ru/PixService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

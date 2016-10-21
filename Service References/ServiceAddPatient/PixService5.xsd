@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EMKService.Data.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PatientDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Addresses" nillable="true" type="tns:ArrayOfAddressDto" />
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="tns:BirthPlaceDto" />
+      <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="tns:ContactPersonDto" />
+      <xs:element minOccurs="0" name="Contacts" nillable="true" type="tns:ArrayOfContactDto" />
+      <xs:element minOccurs="0" name="DeathTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Documents" nillable="true" type="tns:ArrayOfDocumentDto" />
+      <xs:element minOccurs="0" name="FamilyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdBloodType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdGlobal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdLivingAreaType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdPatientMIS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsVip" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Job" nillable="true" type="tns:JobDto" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Privilege" nillable="true" type="tns:PrivilegeDto" />
+      <xs:element minOccurs="0" name="Sex" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SocialGroup" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="SocialStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDto" nillable="true" type="tns:PatientDto" />
+  <xs:complexType name="ArrayOfAddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressDto" nillable="true" type="tns:AddressDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressDto" nillable="true" type="tns:ArrayOfAddressDto" />
+  <xs:complexType name="AddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Appartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeoData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAddressType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StringAddress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDto" nillable="true" type="tns:AddressDto" />
+  <xs:complexType name="BirthPlaceDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Region" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BirthPlaceDto" nillable="true" type="tns:BirthPlaceDto" />
+  <xs:complexType name="ContactPersonDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactList" nillable="true" type="tns:ArrayOfContactDto" />
+      <xs:element minOccurs="0" name="FamilyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPersonMis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdRelationType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactPersonDto" nillable="true" type="tns:ContactPersonDto" />
+  <xs:complexType name="ArrayOfContactDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactDto" nillable="true" type="tns:ContactDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactDto" nillable="true" type="tns:ArrayOfContactDto" />
+  <xs:complexType name="ContactDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdContactType" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactDto" nillable="true" type="tns:ContactDto" />
+  <xs:complexType name="ArrayOfDocumentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DocumentDto" nillable="true" type="tns:DocumentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocumentDto" nillable="true" type="tns:ArrayOfDocumentDto" />
+  <xs:complexType name="DocumentDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpiredDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdDocumentType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuedDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProviderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DocumentDto" nillable="true" type="tns:DocumentDto" />
+  <xs:complexType name="JobDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OgrnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sphere" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="JobDto" nillable="true" type="tns:JobDto" />
+  <xs:complexType name="PrivilegeDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateStart" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisabilityDegree" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDisabilityType" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IdPrivilegeType" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="IsMain" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MkbCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrivilegeDocument" nillable="true" type="tns:DocumentDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrivilegeDto" nillable="true" type="tns:PrivilegeDto" />
+  <xs:complexType name="ArrayOfPatientDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PatientDto" nillable="true" type="tns:PatientDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatientDto" nillable="true" type="tns:ArrayOfPatientDto" />
+</xs:schema>
